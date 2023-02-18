@@ -1,12 +1,14 @@
 package com.main;
 
+import java.io.IOException;
+
 public class Game implements Runnable {
     private final GameWindow gameWindow;
     private final GamePanel gamePanel;
     private final int FPS_SET = 120;
     private Thread gameThread;
 
-    public Game() {
+    public Game() throws IOException {
         gamePanel = new GamePanel();
         gameWindow = new GameWindow(gamePanel);
         gamePanel.requestFocus();
